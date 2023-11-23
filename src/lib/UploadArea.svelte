@@ -36,10 +36,10 @@
   <article>
     <header>
       {#if result >= 0.5}
-        Warning
+        Safe
       {/if}
       {#if result < 0.5}
-        Safe
+        Warning
       {/if}
     </header>
     {#if result <= 0.5}
