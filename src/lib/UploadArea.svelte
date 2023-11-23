@@ -55,7 +55,7 @@
 
 <article>
   <header>Upload your image to get started!</header>
-  <input type="file" name="file" id="file" on:change={setImage} />
+  <input accept="image/png, image/jpeg" type='file' name="file" id="file" on:change={setImage} />
   {#if showImage}
     <img alt="uploaded photo" bind:this={image} />
     <footer>
