@@ -16,7 +16,7 @@
     let data = new FormData();
     data.append("file", filename);
     const res = await fetch(
-      "https://vitiligo-detector-7x6qvvfqha-el.a.run.app/predict",
+      "https://skin-disease-ayqlhzi55a-el.a.run.app/predict",
       {
         method: "POST",
         body: data,
@@ -42,12 +42,12 @@
         Safe
       {/if}
     </header>
-    {#if result >= 0.5}
-      Our model detects vitiligo, please consider getting it checked by a
-      medical professional
+    {#if result <= 0.5}
+      Our model detects only Eczema, please consider getting this checked by a
+      medical professional.
     {/if}
-    {#if result < 0.5}
-      Our model detects normal, healthy skin
+    {#if result > 0.5}
+      Our model detects normal, healthy skin.
     {/if}
     <footer><button on:click={() => modal.close()}>Close</button></footer>
   </article>
